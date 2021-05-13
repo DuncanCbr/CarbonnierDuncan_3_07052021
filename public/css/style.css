@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 40 | /             @include flex-center
+ * 41 | |         }
+ *    | '--------^
+ *    '
+ *   sass\main.scss 40:13  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 40 \2502  \250c              @include flex-center\a 41 \2502  \2502          }\a    \2502  \2514 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 ^\a    \2575 \a   sass\\main.scss 40:13  root stylesheet";
+}

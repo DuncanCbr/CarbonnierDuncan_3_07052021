@@ -1,0 +1,92 @@
+$violet: #9356DC;
+$rose: #FF79DA;
+$cyan: #99E2D0;
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin width($width) {
+    width: $width;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body
+{
+    height: 100%;
+    font-size: 16px;
+}
+
+h1
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.header
+{
+    &__logo
+    {
+        @include flex-center;
+        &--apparence
+        {
+            @include width(40%);
+        }
+    }
+    &__container
+    {
+        display: flex;
+        flex-direction: column;
+
+        &__location
+        {
+            @include flex-center;
+        }
+
+        &__texte
+        {
+            @include flex-center;
+            flex-direction: column;
+            
+            &__tittle
+            {
+                @include flex-center;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.fonctionnement
+{
+
+    &__bubble
+    {
+        @include flex-center;
+    }
+}
+
+.restaurant
+{
+    &__card
+    {
+        &__caption
+        {
+            display: flex;
+
+            &__heart
+            {
+                @include flex-center;
+            }
+        }
+    }
+}
