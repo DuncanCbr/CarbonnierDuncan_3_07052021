@@ -1,0 +1,40 @@
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin width($width) {
+    width: $width;
+}
+
+@mixin height($height){
+    height: $height;
+}
+@mixin padding($pdg-top: 0px,$pdg-right: 0px,$pdg_bottom: 0px,$pdg-left: 0px){
+    padding-top: $pdg-top;
+    padding-right:$pdg-left;
+    padding-bottom: $pdg-bottom;
+    padding-left: $pdg-left;
+}
+
+@mixin margin($mrg-top: 0px,$mrg-right: 0px,$mrg-bottom: 0px,$mrg-left: 0px) {
+    margin-top: $mrg-top;
+    margin-right: $mrg-right;
+    margin-bottom: $mrg-bottom;
+    margin-left: $mrg-left;
+}
+
+@mixin box-shadow {
+    box-shadow: 1px 5px 7px hsl(11,0,90);
+}
+
+@mixin title1_apparence ($size: 1.5rem, $weight: 600) {
+    font-size: $size;
+    font-weight: $weight;
+
+}
+
+@mixin title2_apparence {
+    font-size: 1.2rem;
+    font-weight: 100;
+}

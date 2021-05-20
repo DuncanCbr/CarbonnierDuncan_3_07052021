@@ -1,0 +1,27 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.header
+{
+    &__container
+    {
+        display: flex;
+        
+        &__arrow
+        {
+            display: flex;
+            align-items: center;
+        }
+        
+        &__logo
+        {
+            @include flex-center;
+            @include padding($pdg-top: 15px, $pdg-bottom: 15px);
+
+            &--apparence
+            {
+                @include width(50%);
+            }
+        }
+    }
+}

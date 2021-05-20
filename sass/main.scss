@@ -1,16 +1,7 @@
-$violet: #9356DC;
-$rose: #FF79DA;
-$cyan: #99E2D0;
+@import "./utils/variables";
+@import "./utils/mixins";
 
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-@mixin width($width) {
-    width: $width;
-}
 
 *
 {
@@ -26,35 +17,47 @@ body
     font-size: 16px;
 }
 
-h1
-{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-}
 
 .header
 {
     &__logo
     {
         @include flex-center;
+        @include padding($pdg-top: 15px, $pdg-bottom: 15px);
+        @include margin($mrg-bottom: 3px);
+        border-bottom: 1px solid $grey;
+        box-shadow: 0px 2px 7px hsl(11,0,75);
         &--apparence
         {
-            @include width(40%);
+            @include width(35%);
         }
     }
     &__container
     {
-        display: flex;
+        @include flex-center;
+        @include padding($pdg-bottom: 50px);
         flex-direction: column;
+        background-color: hsl(11,0,96);
+
 
         &__location
         {
             @include flex-center;
+            @include width(100%);
+            @include padding($pdg-top: 15px, $pdg-bottom: 15px);
+            background-color: hsl(11,0,92);
+
+            .margin_location
+            {
+                @include margin($mrg-right: 20px);
+            }
         }
+
 
         &__texte
         {
             @include flex-center;
+            @include padding($pdg-top: 30px,$pdg-bottom: 30px);
             flex-direction: column;
             
             &__tittle
@@ -62,31 +65,195 @@ h1
                 @include flex-center;
                 text-align: center;
             }
+            
+            .title1
+            {
+                @include title1_apparence;
+                @include padding($pdg-bottom: 15px)
+            }
+
+            .title2
+            {
+                @include title2_apparence;
+            }
+        }
+    
+        &__button
+        {
+            @include flex-center;
+            @include width(50%);
+            @include padding($pdg-top: 15px, $pdg-bottom: 15px,);
+            border-radius: 50px;
+            background: linear-gradient($rose,$violet);
+            color: #fff;
+            border: none;
+            font-size: 1rem;
         }
     }
 }
+
+
 
 .fonctionnement
 {
-
-    &__bubble
+    &__tittle
+    {
+        @include padding($pdg-top: 50px,$pdg-bottom: 40px);
+        @include margin($mrg-left: 35px);
+    }
+    &__container
     {
         @include flex-center;
-    }
-}
+        flex-direction: column;
 
-.restaurant
-{
-    &__card
-    {
-        &__caption
+        &__bubble
         {
+            @include width(80%);
+            @include margin($mrg-bottom: 20px, $mrg-left: -20px);
+            @include padding($pdg-top: 25px,$pdg-bottom: 25px);
             display: flex;
+            border-radius: 20px;
+            @include box-shadow;
+            background-color: hsl(11,0,96);
 
-            &__heart
+            .margin_txt_bubble
             {
-                @include flex-center;
+                @include margin($mrg-right: 30px);
+            }
+
+            .border_number
+            {
+                @include padding($pdg-top: 5px, $pdg-right: 9px, $pdg-bottom: 5px, $pdg-left: 9px);
+                border-radius: 50px;
+                background-color: #9356DC;
+                color: #ffff;
+                font-size: 0.8rem;
+                position: relative;
+                left: -10px;
             }
         }
     }
+
 }
+
+.restaurant
+{  
+    background-color: hsl(11,0,95);
+    @include padding($pdg-bottom: 40px);
+
+    &__title
+    {
+        @include margin($mrg-top: 50px,$mrg-bottom: 20px, $mrg-left: 40px);
+        @include padding($pdg-top: 50px);
+    }
+    &__container
+    {
+        @include flex-center;
+        flex-wrap: wrap;
+       
+        &__card
+        {
+            @include width(80%);
+            @include height(240px);
+            @include margin($mrg-bottom: 20px);
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 15px;
+            background-color: #ffff;
+            @include box-shadow;
+            
+            &__image
+            {
+                position: relative;
+                @include width(100%);
+                @include height(70%);
+
+                .img_dimension
+                {
+                    position: absolute;
+                    @include width(100%);
+                    @include height(100%);
+                    object-fit: cover;
+                    z-index: 1;
+                }
+
+                .new
+                {
+                    @include margin($mrg-left: 70%);                    background-color: $cyan;
+                    @include padding($pdg-top: 5px,$pdg-right: 10px, $pdg-bottom: 5px, $pdg-left: 10px);
+                    position: absolute;
+                    top: 10px;
+                    z-index: 2;
+                    font-size: 0.9rem;
+                    color: darken($cyan, 40%);
+                }
+
+            }
+            
+            &__caption
+            {
+                display: flex;
+                justify-content: space-between;
+                @include margin($mrg-top: 10px, $mrg-right: 20px, $mrg-bottom: 10px, $mrg-left: 20px);
+    
+                .title1_rest_card
+                {
+                    @include title1_apparence($size: 1.3rem, $weight: 600);
+                }
+
+                .title2_rest_card
+                {
+                    @include title2_apparence;
+                }
+                &__heart
+                {
+                    @include flex-center;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+}
+
+.footer
+{
+    background-color: darken($color: $grey, $amount: 65%);
+    color: #fff;
+    @include padding($pdg-left: 20px);
+    &__logo
+    {
+        @include padding($pdg-top: 15px, $pdg-bottom: 15px);
+        
+        &--apparence
+        {
+            font-family: 'Shrikhand', cursive;
+            font-size: 1.1rem;
+        }
+    }
+
+    &__container
+    {
+        &__icontxt
+        {
+            display: flex;
+
+            .icon
+            {
+                @include margin($mrg-right: 15px);
+            }
+
+            .icon_hand
+            {
+                font-size: 0.9rem;
+                @include margin($mrg-right: -4px);
+            }
+        }
+    
+        .padding_txt_footer
+        {
+            @include padding($pdg-bottom: 5px);
+        }
+    }
+}
+
