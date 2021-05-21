@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass" :"sass --watch ./sass/main.scss:./css/style.css"
+    "sass" :"sass --watch ./sass/à_la_française.scss:./css/à_la_française.css"
 
   },
   "repository": {

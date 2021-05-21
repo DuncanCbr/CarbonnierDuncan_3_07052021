@@ -12,7 +12,7 @@
 }
 @mixin padding($pdg-top: 0px,$pdg-right: 0px,$pdg_bottom: 0px,$pdg-left: 0px){
     padding-top: $pdg-top;
-    padding-right:$pdg-left;
+    padding-right:$pdg-right;
     padding-bottom: $pdg-bottom;
     padding-left: $pdg-left;
 }

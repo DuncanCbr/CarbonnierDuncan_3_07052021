@@ -1,16 +1,33 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body
+{
+    height: 100%;
+    font-size: 16px;
+}
+
+
 .header
 {
     &__container
     {
-        display: flex;
+        @include width(100%);
+        @include flex-center;
         
         &__arrow
         {
             display: flex;
             align-items: center;
+            justify-content: flex-start;
         }
         
         &__logo
@@ -22,6 +39,162 @@
             {
                 @include width(50%);
             }
+        }
+    }
+}
+
+.position_menu
+{
+    @include width(100%);
+    background-color: hsl(11,0,96);
+    &__img
+    {
+        &--apparence
+        {
+            @include width(100%);
+        }
+    }
+}
+
+.menu
+{
+    @include width(100%);
+    flex-direction: column;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: hsl(11,0,96);
+    position: relative;
+    bottom: 60px;
+
+    &__title
+    {
+        @include width(85%);
+        @include margin ($mrg-left: 25px);
+        @include padding ($pdg-top: 40px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        &--apparence
+        {
+            font-family: 'Shrikhand', cursive;
+            font-weight: 500;
+        }
+
+    
+        &--heart
+        {
+            font-size: 1.5rem;
+        }
+    }
+    
+    &__container
+    {
+        @include width(100%);
+        @include margin($mrg-left: 20px);
+        flex-direction: column;
+
+        &__title
+        {
+            @include width(100%);
+            display: block;
+            @include margin($mrg-bottom: 30px, $mrg-top: 40px);
+            font-weight: 300;
+
+            .border_title
+            {
+                @include padding($pdg-bottom: 3px);
+                border-bottom: 3px solid $cyan;
+            }
+        }
+        &__bubble
+        {
+            @include width(90%);
+            @include box-shadow;
+            @include margin ($mrg-top: 10px, $mrg-bottom: 10px);
+            @include padding ($pdg-top: 15px, $pdg-right: 15px, $pdg-bottom: 15px, $pdg-left: 10px);
+            background-color: #fff;
+            border-radius: 15px;
+
+            &--name
+            {
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+
+            &__prize
+            {
+                @include padding ($pdg-top: 10px);
+                font-weight: 300;
+                font-size: 1rem;
+                display: flex;
+                justify-content: space-between;
+
+                &--apparence
+                {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .flex-center__button
+    {
+        @include width(100%);
+        @include flex-center;
+        @include padding($pdg-top: 40px, $pdg-bottom:30px);
+    }
+
+    &__button
+    {
+        @include flex-center;
+        @include width(40%);
+        @include padding($pdg-top: 15px, $pdg-bottom: 15px,);
+        border-radius: 50px;
+        background: linear-gradient($rose,$violet);
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+    }
+}
+
+.footer
+{
+    background-color: darken($color: $grey, $amount: 65%);
+    color: #fff;
+    @include padding($pdg-left: 20px);
+    &__logo
+    {
+        @include padding($pdg-top: 25px, $pdg-bottom: 15px);
+        
+        &--apparence
+        {
+            font-family: 'Shrikhand', cursive;
+            font-size: 1.1rem;
+        }
+    }
+
+    &__container
+    {
+        &__icontxt
+        {
+            display: flex;
+
+            .icon
+            {
+                @include margin($mrg-right: 15px);
+            }
+
+            .icon_hand
+            {
+                font-size: 0.9rem;
+                @include margin($mrg-right: -4px);
+            }
+        }
+    
+        .padding_txt_footer
+        {
+            @include padding($pdg-bottom: 5px);
         }
     }
 }
