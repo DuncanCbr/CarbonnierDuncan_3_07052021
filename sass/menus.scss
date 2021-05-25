@@ -52,6 +52,8 @@ body
         &--apparence
         {
             @include width(100%);
+            @include height(40%);
+            object-fit: cover;
         }
     }
 }
@@ -91,14 +93,19 @@ body
     &__container
     {
         @include width(100%);
-        @include margin($mrg-left: 20px);
         flex-direction: column;
+
+        .center_bubble
+        {
+            @include flex-center;
+            flex-direction: column;
+        }
 
         &__title
         {
-            @include width(100%);
+            @include width(50%);
             display: block;
-            @include margin($mrg-bottom: 30px, $mrg-top: 40px);
+            @include margin($mrg-bottom: 30px, $mrg-top: 40px, $mrg-left: 25px);
             font-weight: 300;
 
             .border_title
