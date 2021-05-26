@@ -1,6 +1,7 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
+
 *
 {
     margin: 0;
@@ -18,22 +19,22 @@ body
 
 .header
 {
+    display: flex;       
+    &__arrow
+    {
+        align-self: center;
+        justify-content: flex-start;
+        font-size: 1.2rem;
+    }
+
     &__container
     {
         @include width(100%);
-        @include flex-center;
-        
-        &__arrow
-        {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
         
         &__logo
         {
-            @include flex-center;
             @include padding($pdg-top: 15px, $pdg-bottom: 15px);
+            @include flex-center;
 
             &--apparence
             {
@@ -204,4 +205,66 @@ body
             @include padding($pdg-bottom: 5px);
         }
     }
+}
+
+@media (min-width: 750px)
+{
+    .header
+    {
+        &__arrow
+        {
+            font-size: 1.5rem;
+        }
+
+        &__container
+        {
+            &__logo
+            {
+                &--apparence
+                {
+                    @include width(370px);
+                }
+            }
+        }
+    }
+
+    .menu
+    {
+        &__button
+        {
+            @include width(300px);
+        }
+    }
+
+    .footer
+    {
+        &__logo
+        {
+            @include flex-center;
+        }
+        &__container
+        {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media (min-width: 1400px) 
+{
+    .menu
+    {
+        bottom: 40px;
+
+        &__title
+        {
+            @include width(95%);
+        }
+
+        &__responsive
+        {
+            display: flex;
+            flex-direction: row;
+        }
+    }    
 }
