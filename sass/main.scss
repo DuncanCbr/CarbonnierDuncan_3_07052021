@@ -81,7 +81,7 @@ body
         &__button
         {
             @include flex-center;
-            @include width(50%);
+            @include width(225px);
             @include padding($pdg-top: 15px, $pdg-bottom: 15px,);
             border-radius: 50px;
             background: linear-gradient($rose,$violet);
@@ -96,7 +96,7 @@ body
 
 .fonctionnement
 {
-    &__tittle
+    &__title
     {
         @include padding($pdg-top: 50px,$pdg-bottom: 40px);
         @include margin($mrg-left: 35px);
@@ -141,6 +141,13 @@ body
     background-color: hsl(11,0,95);
     @include padding($pdg-bottom: 40px);
 
+    &__responsive
+    {
+        @include flex-center;
+        flex-direction: column;
+        @include width(100%);
+    }
+
     &__title
     {
         @include margin($mrg-top: 50px,$mrg-bottom: 20px, $mrg-left: 40px);
@@ -149,7 +156,7 @@ body
     &__container
     {
         @include flex-center;
-        flex-wrap: wrap;
+        flex-direction: column;
        
         &__card
         {
@@ -179,10 +186,11 @@ body
 
                 .new
                 {
-                    @include margin($mrg-left: 70%);                    background-color: $cyan;
+                    background-color: $cyan;
                     @include padding($pdg-top: 5px,$pdg-right: 10px, $pdg-bottom: 5px, $pdg-left: 10px);
                     position: absolute;
-                    top: 10px;
+                    top: 10%;
+                    right: 5%;
                     z-index: 2;
                     font-size: 0.9rem;
                     color: darken($cyan, 40%);
@@ -257,3 +265,76 @@ body
     }
 }
 
+@media (min-width: 750px)
+{
+    .header
+    {
+        &__logo
+        {
+            &--apparence
+            {
+                @include width(262px);
+            }
+        }
+    }
+
+    .footer
+    {
+        &__logo
+        {
+            @include flex-center;
+        }
+        &__container
+        {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+}
+
+@media (min-width: 1200px)
+{
+    .fonctionnement
+    {
+        &__title
+        {
+            @include flex-center;
+        }
+        &__container
+        {
+            display: flex;
+            flex-direction: row;
+
+            &__bubble
+            {
+                @include width(30%);
+                @include margin($mrg-right: 30px);            
+            }
+        }
+    }
+
+    .restaurant
+    {
+        &__title
+        {
+            @include flex-center;
+        }
+
+        &__responsive
+        {
+            flex-direction: row;
+            @include width(100%);
+            @include margin($mrg-top: 30px, $mrg-bottom: 30px);
+        }
+
+        &__container
+        {
+            &__card
+            {
+                @include width(35%);
+                @include margin($mrg-right: 40px);
+            }
+        }
+    }
+}
