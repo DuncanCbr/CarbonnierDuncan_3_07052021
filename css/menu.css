@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+.header {
+  display: flex;
+}
+.header__arrow {
+  align-self: center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+}
+.header__container {
+  width: 100%;
+}
+.header__container__logo {
+  padding-top: 15px;
+  padding-right: 0px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__container__logo--apparence {
+  width: 50%;
+}
+
+.position_menu {
+  width: 100%;
+  background-color: whitesmoke;
+}
+.position_menu__img--apparence {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+}
+
+.menu {
+  width: 100%;
+  flex-direction: column;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: whitesmoke;
+  position: relative;
+  bottom: 60px;
+}
+.menu__title {
+  width: 85%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+  padding-top: 40px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__title--apparence {
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+}
+.menu__title--heart {
+  font-size: 1.5rem;
+}
+.menu__container {
+  width: 100%;
+  flex-direction: column;
+}
+.menu__container .center_bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.menu__container__title {
+  width: 50%;
+  display: block;
+  margin-top: 40px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  font-weight: 300;
+}
+.menu__container__title .border_title {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 3px;
+  padding-left: 0px;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu__container__bubble {
+  width: 90%;
+  box-shadow: 1px 5px 7px #e6e6e6;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.menu__container__bubble--name {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.menu__container__bubble__prize {
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  font-weight: 300;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__container__bubble__prize--apparence {
+  font-weight: 500;
+}
+.menu .flex-center__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-right: 0px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+}
+.menu__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding-top: 15px;
+  padding-right: 0px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  border-radius: 50px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+}
+
+.footer {
+  background-color: #333333;
+  color: #fff;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
+.footer__logo {
+  padding-top: 25px;
+  padding-right: 0px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+}
+.footer__logo--apparence {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.1rem;
+}
+.footer__container__icontxt {
+  display: flex;
+}
+.footer__container__icontxt .icon {
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.footer__container__icontxt .icon_hand {
+  font-size: 0.9rem;
+  margin-top: 0px;
+  margin-right: -4px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.footer__container .padding_txt_footer {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+}
+
+@media (min-width: 750px) {
+  .header__arrow {
+    font-size: 1.5rem;
+  }
+  .header__container__logo--apparence {
+    width: 370px;
+  }
+
+  .menu__button {
+    width: 300px;
+  }
+
+  .footer__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer__container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1400px) {
+  .menu {
+    bottom: 40px;
+  }
+  .menu__title {
+    width: 95%;
+  }
+  .menu__responsive {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=menu.css.map */
