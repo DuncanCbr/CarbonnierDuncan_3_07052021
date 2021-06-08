@@ -62,6 +62,7 @@ body
 .menu
 {
     @include width(100%);
+    @include height(auto);
     flex-direction: column;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -90,6 +91,34 @@ body
             font-size: 1.5rem;
         }
     }
+    .far.fa-heart
+    {
+        cursor: pointer;
+        transition: transform 150ms 40ms ease-in-out;
+        transform: scale(1);
+    }
+
+    .fas.fa-heart
+    {
+        position: absolute;
+        background: linear-gradient(170deg, $violet, $rose);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: scale(0);
+        transition: transform 150ms 40ms ease-in-out;
+        cursor: pointer;
+    }
+
+    .far.fa-heart:active + .fas.fa-heart
+    {
+       transform: scale(1);
+    }
+    .far.fa-heart:active
+    {
+        color: transparent;
+        transform: scale(0);
+    }
     
     &__container
     {
@@ -117,12 +146,26 @@ body
         }
         &__bubble
         {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
             @include width(90%);
             @include box-shadow;
             @include margin ($mrg-top: 10px, $mrg-bottom: 10px);
-            @include padding ($pdg-top: 15px, $pdg-right: 15px, $pdg-bottom: 15px, $pdg-left: 10px);
             background-color: #fff;
             border-radius: 15px;
+
+            &:active > .animation_check
+            {
+                animation: coche-animation 300ms 500ms ease both;
+            }
+
+            &:active > .txt_bubble
+            {
+                animation: width-animation 300ms 500ms ease both;
+            }
 
             &--name
             {
@@ -146,6 +189,43 @@ body
         }
     }
 
+    .txt_bubble
+    {
+        @include width (100%);
+        @include padding($pdg-top: 10px, $pdg-right: 20px, $pdg-bottom: 10px, $pdg-left: 10px);
+    }
+
+    .animation_check
+    {
+        @include width (15%);
+        @include height (100%);
+        @include flex-center;
+        left: 100%;
+        position: absolute;
+        background-color: $cyan;
+        color: #fff;
+        font-size: 1.3rem;
+    }
+
+    @keyframes width-animation
+    {
+        0% {
+            @include width(100%);
+        }
+        100%{
+            @include width(85%);
+        }
+    }
+    @keyframes coche-animation
+    {
+        0% {
+            left: 100%; 
+        }
+        100% {
+            left: 85%;
+        }
+    }
+
     .flex-center__button
     {
         @include width(100%);
@@ -163,8 +243,40 @@ body
         color: #fff;
         border: none;
         font-size: 1rem;
+
+        &:hover
+        {
+            background: linear-gradient($rose-éclairci,$violet-éclairci);
+            box-shadow: 1px 5px 7px hsl(11,0,60);
+        }
     }
 }
+
+.menu_keyframes1
+{
+    animation: 500ms ease 200ms 1 normal both running opacity-menus;
+}
+
+.menu_keyframes2
+{
+    animation: 500ms ease 700ms 1 normal both running opacity-menus;
+}
+
+.menu_keyframes3
+{
+    animation: 500ms ease 1200ms 1 normal both running opacity-menus;
+}
+
+@keyframes opacity-menus
+{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .footer
 {
