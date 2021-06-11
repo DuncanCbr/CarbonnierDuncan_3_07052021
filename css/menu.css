@@ -5,11 +5,27 @@
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   height: 100%;
   font-size: 16px;
+  animation: body 800ms 400ms both;
 }
 
+@keyframes body {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .header {
   display: flex;
 }
@@ -40,7 +56,7 @@ body {
 }
 .position_menu__img--apparence {
   width: 100%;
-  height: 40%;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -74,28 +90,6 @@ body {
 }
 .menu__title--heart {
   font-size: 1.5rem;
-}
-.menu .far.fa-heart {
-  cursor: pointer;
-  transition: transform 150ms 40ms ease-in-out;
-  transform: scale(1);
-}
-.menu .fas.fa-heart {
-  position: absolute;
-  background: linear-gradient(170deg, #9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(0);
-  transition: transform 150ms 40ms ease-in-out;
-  cursor: pointer;
-}
-.menu .far.fa-heart:active + .fas.fa-heart {
-  transform: scale(1);
-}
-.menu .far.fa-heart:active {
-  color: transparent;
-  transform: scale(0);
 }
 .menu__container {
   width: 100%;
@@ -139,10 +133,10 @@ body {
   border-radius: 15px;
 }
 .menu__container__bubble:active > .animation_check {
-  animation: coche-animation 300ms 500ms ease both;
+  animation: coche-animation 300ms 100ms ease both;
 }
 .menu__container__bubble:active > .txt_bubble {
-  animation: width-animation 300ms 500ms ease both;
+  animation: width-animation 300ms 100ms ease both;
 }
 .menu__container__bubble--name {
   font-weight: 500;
@@ -207,6 +201,7 @@ body {
   padding-left: 0px;
 }
 .menu__button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,15 +222,15 @@ body {
 }
 
 .menu_keyframes1 {
-  animation: 500ms ease 200ms 1 normal both running opacity-menus;
+  animation: 630ms ease 1116.44ms both opacity-menus;
 }
 
 .menu_keyframes2 {
-  animation: 500ms ease 700ms 1 normal both running opacity-menus;
+  animation: 630ms ease 1642.28ms both opacity-menus;
 }
 
 .menu_keyframes3 {
-  animation: 500ms ease 1200ms 1 normal both running opacity-menus;
+  animation: 630ms ease 2214.72ms both opacity-menus;
 }
 
 @keyframes opacity-menus {
@@ -255,7 +250,7 @@ body {
   padding-left: 20px;
 }
 .footer__logo {
-  padding-top: 25px;
+  padding-top: 15px;
   padding-right: 0px;
   padding-bottom: 15px;
   padding-left: 0px;
@@ -285,6 +280,14 @@ body {
   padding-right: 0px;
   padding-bottom: 5px;
   padding-left: 0px;
+}
+.footer__container .d-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > p, a {
+  color: #fff;
 }
 
 @media (min-width: 750px) {

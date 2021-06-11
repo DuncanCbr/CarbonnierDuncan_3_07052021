@@ -10,12 +10,29 @@
     font-family: 'Roboto', sans-serif;
 }
 
+a
+{
+    text-decoration: none;
+}
+
 body
 {
     height: 100%;
     font-size: 16px;
+    animation: body  800ms 400ms both;
 }
 
+@keyframes body {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .header
 {
@@ -53,7 +70,7 @@ body
         &--apparence
         {
             @include width(100%);
-            @include height(40%);
+            @include height(350px);
             object-fit: cover;
         }
     }
@@ -90,34 +107,6 @@ body
         {
             font-size: 1.5rem;
         }
-    }
-    .far.fa-heart
-    {
-        cursor: pointer;
-        transition: transform 150ms 40ms ease-in-out;
-        transform: scale(1);
-    }
-
-    .fas.fa-heart
-    {
-        position: absolute;
-        background: linear-gradient(170deg, $violet, $rose);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transform: scale(0);
-        transition: transform 150ms 40ms ease-in-out;
-        cursor: pointer;
-    }
-
-    .far.fa-heart:active + .fas.fa-heart
-    {
-       transform: scale(1);
-    }
-    .far.fa-heart:active
-    {
-        color: transparent;
-        transform: scale(0);
     }
     
     &__container
@@ -159,12 +148,12 @@ body
 
             &:active > .animation_check
             {
-                animation: coche-animation 300ms 500ms ease both;
+                animation: coche-animation 300ms 100ms ease both;
             }
 
             &:active > .txt_bubble
             {
-                animation: width-animation 300ms 500ms ease both;
+                animation: width-animation 300ms 100ms ease both;
             }
 
             &--name
@@ -235,6 +224,7 @@ body
 
     &__button
     {
+        cursor: pointer;
         @include flex-center;
         @include width(40%);
         @include padding($pdg-top: 15px, $pdg-bottom: 15px,);
@@ -254,17 +244,17 @@ body
 
 .menu_keyframes1
 {
-    animation: 500ms ease 200ms 1 normal both running opacity-menus;
+    animation: 630ms ease 1116.44ms both opacity-menus;
 }
 
 .menu_keyframes2
 {
-    animation: 500ms ease 700ms 1 normal both running opacity-menus;
+    animation: 630ms ease 1642.28ms both  opacity-menus;
 }
 
 .menu_keyframes3
 {
-    animation: 500ms ease 1200ms 1 normal both running opacity-menus;
+    animation: 630ms ease 2214.72ms  both opacity-menus;
 }
 
 @keyframes opacity-menus
@@ -285,7 +275,7 @@ body
     @include padding($pdg-left: 20px);
     &__logo
     {
-        @include padding($pdg-top: 25px, $pdg-bottom: 15px);
+        @include padding($pdg-top: 15px, $pdg-bottom: 15px);
         
         &--apparence
         {
@@ -316,8 +306,20 @@ body
         {
             @include padding($pdg-bottom: 5px);
         }
+
+        .d-flex
+        {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
+
+footer > p,a
+{
+    color: #fff;
+}
+
 
 @media (min-width: 750px)
 {

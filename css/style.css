@@ -10,23 +10,33 @@ a {
 }
 
 body {
+  animation: overflow-body 0ms 3000ms both;
   width: 100%;
   height: 100%;
   font-size: 16px;
 }
 
 .body {
-  animation: body 0ms 3000ms both;
+  animation: body 400ms 3000ms both;
 }
 
 @keyframes body {
   0% {
-    transform: translateX(-9999px);
     opacity: 0;
   }
+  50% {
+    opacity: 0.5;
+  }
   100% {
-    transform: translateX(0px);
     opacity: 1;
+  }
+}
+@keyframes overflow-body {
+  0% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: visible;
   }
 }
 .header__logo {
@@ -112,6 +122,7 @@ body {
   padding-right: 0px;
   padding-bottom: 15px;
   padding-left: 0px;
+  cursor: pointer;
   border-radius: 50px;
   background: linear-gradient(#FF79DA, #9356DC);
   color: #fff;
@@ -276,7 +287,6 @@ body {
 .restaurant__container__card__caption__heart .fas.fa-heart {
   position: absolute;
   background: linear-gradient(170deg, #9356DC, #FF79DA);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0);
@@ -341,11 +351,11 @@ footer > p, a {
 }
 
 .container {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  bottom: 50%;
-  right: 45%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   animation: z-index-bars 0ms 3000ms both;
 }
 .container__load {
@@ -354,7 +364,7 @@ footer > p, a {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: opacity-bars 0ms 3000ms both;
+  animation: opacity-bars 400ms 2700ms both;
 }
 .container__load__bar {
   background: linear-gradient(#9356DC, #FF79DA);
@@ -395,6 +405,9 @@ footer > p, a {
   0% {
     opacity: 1;
     z-index: 99;
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
     opacity: 0;
