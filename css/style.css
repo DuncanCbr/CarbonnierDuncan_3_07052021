@@ -293,10 +293,10 @@ body {
   transition: transform 150ms 40ms ease-in-out;
   cursor: pointer;
 }
-.restaurant__container__card__caption__heart .far.fa-heart:active + .fas.fa-heart {
+.restaurant__container__card__caption__heart .far.fa-heart:hover + .fas.fa-heart {
   transform: scale(1);
 }
-.restaurant__container__card__caption__heart .far.fa-heart:active {
+.restaurant__container__card__caption__heart .far.fa-heart:hover {
   color: transparent;
   transform: scale(0);
 }

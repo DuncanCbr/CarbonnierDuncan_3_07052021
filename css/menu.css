@@ -30,6 +30,9 @@ body {
   display: flex;
 }
 .header__arrow {
+  color: black;
+  cursor: pointer;
+  text-decoration: initial;
   align-self: center;
   justify-content: flex-start;
   font-size: 1.2rem;
@@ -91,6 +94,33 @@ body {
 .menu__title--heart {
   font-size: 1.5rem;
 }
+.menu .heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.menu .far.fa-heart {
+  cursor: pointer;
+  transition: transform 150ms 40ms ease-in-out;
+  transform: scale(1);
+}
+.menu .fas.fa-heart {
+  position: absolute;
+  background: linear-gradient(170deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  transition: transform 150ms 40ms ease-in-out;
+  cursor: pointer;
+}
+.menu .far.fa-heart:hover + .fas.fa-heart {
+  transform: scale(1);
+}
+.menu .far.fa-heart:hover {
+  color: transparent;
+  transform: scale(0);
+}
 .menu__container {
   width: 100%;
   flex-direction: column;
@@ -132,10 +162,10 @@ body {
   background-color: #fff;
   border-radius: 15px;
 }
-.menu__container__bubble:active > .animation_check {
+.menu__container__bubble:hover > .animation_check {
   animation: coche-animation 300ms 100ms ease both;
 }
-.menu__container__bubble:active > .txt_bubble {
+.menu__container__bubble:hover > .txt_bubble {
   animation: width-animation 300ms 100ms ease both;
 }
 .menu__container__bubble--name {

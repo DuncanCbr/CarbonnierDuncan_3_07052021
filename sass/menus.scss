@@ -39,6 +39,9 @@ body
     display: flex;       
     &__arrow
     {
+        color: black;
+        cursor: pointer;
+        text-decoration: initial;
         align-self: center;
         justify-content: flex-start;
         font-size: 1.2rem;
@@ -108,7 +111,40 @@ body
             font-size: 1.5rem;
         }
     }
+
+    .heart
+    {
+        @include flex-center;
+        position: relative;
+    }
+    .far.fa-heart
+    {
+        cursor: pointer;
+        transition: transform 150ms 40ms ease-in-out;
+        transform: scale(1);
+    }
+
+    .fas.fa-heart
+    {
+        position: absolute;
+        background: linear-gradient(170deg,$violet,$rose);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: scale(0);
+        transition: transform 150ms 40ms ease-in-out;
+        cursor: pointer;
+    }
     
+    .far.fa-heart:hover + .fas.fa-heart
+    {
+        transform: scale(1);
+    }
+
+    .far.fa-heart:hover
+    {
+        color: transparent;
+        transform: scale(0);
+    }
     &__container
     {
         @include width(100%);
@@ -146,12 +182,12 @@ body
             background-color: #fff;
             border-radius: 15px;
 
-            &:active > .animation_check
+            &:hover > .animation_check
             {
                 animation: coche-animation 300ms 100ms ease both;
             }
 
-            &:active > .txt_bubble
+            &:hover > .txt_bubble
             {
                 animation: width-animation 300ms 100ms ease both;
             }

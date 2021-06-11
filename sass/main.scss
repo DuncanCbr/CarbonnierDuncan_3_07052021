@@ -282,11 +282,11 @@ body
                         cursor: pointer;
                     }
 
-                    .far.fa-heart:active + .fas.fa-heart
+                    .far.fa-heart:hover + .fas.fa-heart
                     {
                        transform: scale(1);
                     }
-                    .far.fa-heart:active
+                    .far.fa-heart:hover
                     {
                         color: transparent;
                         transform: scale(0);
