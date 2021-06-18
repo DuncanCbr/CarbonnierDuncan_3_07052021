@@ -192,6 +192,20 @@ body
                 animation: width-animation 300ms 100ms ease both;
             }
 
+            &:hover  .circle_check
+            {
+                animation: rotation 500ms 100ms ease-in-out;
+            }
+
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
             &--name
             {
                 font-weight: 500;
@@ -210,6 +224,7 @@ body
                 {
                     font-weight: 500;
                 }
+            
             }
         }
     }
@@ -231,6 +246,8 @@ body
         color: #fff;
         font-size: 1.3rem;
     }
+
+
 
     @keyframes width-animation
     {
@@ -418,3 +435,5 @@ footer > p,a
         }
     }    
 }
+
+

@@ -168,6 +168,17 @@ body {
 .menu__container__bubble:hover > .txt_bubble {
   animation: width-animation 300ms 100ms ease both;
 }
+.menu__container__bubble:hover .circle_check {
+  animation: rotation 500ms 100ms ease-in-out;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .menu__container__bubble--name {
   font-weight: 500;
   font-size: 1.2rem;
