@@ -204,6 +204,11 @@ body {
   padding-bottom: 10px;
   padding-left: 10px;
 }
+.menu .ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .menu .animation_check {
   width: 15%;
   height: 100%;

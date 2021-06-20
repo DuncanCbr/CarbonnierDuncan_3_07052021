@@ -236,6 +236,13 @@ body
         @include padding($pdg-top: 10px, $pdg-right: 20px, $pdg-bottom: 10px, $pdg-left: 10px);
     }
 
+    .ellipsis
+    {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
     .animation_check
     {
         @include width (15%);
